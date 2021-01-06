@@ -6,6 +6,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "ViewController.h"
 
 @interface SceneDelegate ()
 
@@ -18,6 +19,44 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    
+    self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
+    UITabBarController *tabbarController = [[UITabBarController alloc] init];
+
+    ViewController *viewController = [[ViewController alloc] init];
+
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: viewController];
+    navigationController.tabBarItem.title = @"新闻";
+    navigationController.tabBarItem.image = [UIImage systemImageNamed:@"play"];
+
+//    UIViewController *controller1 = [[UIViewController alloc] init];
+//    controller1.view.backgroundColor = [UIColor redColor];
+//    controller1.tabBarItem.title = @"新闻";
+//    controller1.tabBarItem.image = [UIImage systemImageNamed: @"bookmarks"];
+
+    UIViewController *controller2 = [[UIViewController alloc] init];
+    controller2.view.backgroundColor = [UIColor yellowColor];
+    controller2.tabBarItem.title = @"视频";
+    controller2.tabBarItem.image = [UIImage systemImageNamed: @"play"];
+
+    UIViewController *controller3 = [[UIViewController alloc] init];
+    controller3.view.backgroundColor = [UIColor greenColor];
+    controller3.tabBarItem.title = @"推荐";
+    controller3.tabBarItem.image = [UIImage systemImageNamed: @"stop"];
+
+
+    UIViewController *controller4 = [[UIViewController alloc] init];
+    controller4.view.backgroundColor = [UIColor lightGrayColor];
+    controller4.tabBarItem.title = @"我的";
+    controller4.tabBarItem.image = [UIImage systemImageNamed: @"home"];
+
+
+    [tabbarController setViewControllers: @[navigationController,controller2,controller3,controller4]];
+
+    // MainTabBarController 是 CYLTabBarController 的子类
+    self.window.rootViewController = tabbarController;
+
+    [self.window makeKeyAndVisible];
 }
 
 
