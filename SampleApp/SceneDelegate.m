@@ -25,9 +25,9 @@
 
     ViewController *viewController = [[ViewController alloc] init];
 
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: viewController];
-    navigationController.tabBarItem.title = @"新闻";
-    navigationController.tabBarItem.image = [UIImage systemImageNamed:@"play"];
+    
+    viewController.tabBarItem.title = @"新闻";
+    viewController.tabBarItem.image = [UIImage systemImageNamed:@"play"];
 
 //    UIViewController *controller1 = [[UIViewController alloc] init];
 //    controller1.view.backgroundColor = [UIColor redColor];
@@ -50,11 +50,12 @@
     controller4.tabBarItem.title = @"我的";
     controller4.tabBarItem.image = [UIImage systemImageNamed: @"home"];
 
-
-    [tabbarController setViewControllers: @[navigationController,controller2,controller3,controller4]];
+    
+    [tabbarController setViewControllers: @[viewController,controller2,controller3,controller4]];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: tabbarController];
 
     // MainTabBarController 是 CYLTabBarController 的子类
-    self.window.rootViewController = tabbarController;
+    self.window.rootViewController = navigationController;
 
     [self.window makeKeyAndVisible];
 }
