@@ -38,7 +38,7 @@
 }
 @end
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -77,29 +77,66 @@
 //            lable.center = CGPointMake(self.view.frame.size.width /2 , self.view.frame.size.height/2);
 //            lable;
 //    })];
-    self.view.backgroundColor = [UIColor whiteColor];
-    TestView *view2 = [[TestView alloc] init];
-    view2.backgroundColor = [UIColor greenColor];
-    view2.frame = CGRectMake(150, 150, 100, 100);
-    [self.view addSubview: view2];
+//    self.view.backgroundColor = [UIColor whiteColor];
+//    TestView *view2 = [[TestView alloc] init];
+//    view2.backgroundColor = [UIColor greenColor];
+//    view2.frame = CGRectMake(150, 150, 100, 100);
+//    [self.view addSubview: view2];
     
 //    UIView *view = [[UIView alloc] init];
 //    view.backgroundColor = [UIColor redColor];
 //    view.frame = CGRectMake(100, 100, 100, 100);
 //    [self.view addSubview: view];
     //新建手势
-    UITapGestureRecognizer *tapGestuew = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
-    [view2 addGestureRecognizer:tapGestuew];
+//    UITapGestureRecognizer *tapGestuew = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
+//    [view2 addGestureRecognizer:tapGestuew];
+    
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame: self.view.bounds];
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    [self.view addSubview:tableView];
+    
     
 }
 
-- (void)pushController{
-    UIViewController *viewController = [[UIViewController alloc] init];
-    viewController.view.backgroundColor = [UIColor whiteColor];
-    viewController.navigationItem.title = @"内容";
-    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
-    [self.navigationController pushViewController:viewController  animated: YES];
+//- (void)pushController{
+//    UIViewController *viewController = [[UIViewController alloc] init];
+//    viewController.view.backgroundColor = [UIColor whiteColor];
+//    viewController.navigationItem.title = @"内容";
+//    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
+//    [self.navigationController pushViewController:viewController  animated: YES];
+//
+//}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    if(!cell){
+        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat: @"主标题 -%@",@(indexPath.row)];
+    cell.detailTextLabel.text = @"副标题";
+    cell.imageView.image = [UIImage systemImageNamed:@"play"];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UIViewController *controller = [[UIViewController alloc] init];
+    controller.view.backgroundColor = [UIColor whiteColor];
+    controller.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 
