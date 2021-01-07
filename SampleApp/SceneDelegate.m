@@ -8,7 +8,7 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 
-@interface SceneDelegate ()
+@interface SceneDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -22,6 +22,7 @@
     
     self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
     UITabBarController *tabbarController = [[UITabBarController alloc] init];
+    
 
     ViewController *viewController = [[ViewController alloc] init];
 
@@ -52,12 +53,17 @@
 
     
     [tabbarController setViewControllers: @[viewController,controller2,controller3,controller4]];
+    tabbarController.delegate = self;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: tabbarController];
 
     // MainTabBarController 是 CYLTabBarController 的子类
     self.window.rootViewController = navigationController;
 
     [self.window makeKeyAndVisible];
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    NSLog(@"did select");
 }
 
 
