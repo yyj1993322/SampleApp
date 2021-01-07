@@ -7,6 +7,7 @@
 
 #import "SceneDelegate.h"
 #import "ViewController.h"
+#import "GTVideoViewController.h"
 
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
@@ -35,10 +36,13 @@
 //    controller1.tabBarItem.title = @"新闻";
 //    controller1.tabBarItem.image = [UIImage systemImageNamed: @"bookmarks"];
 
-    UIViewController *controller2 = [[UIViewController alloc] init];
-    controller2.view.backgroundColor = [UIColor yellowColor];
-    controller2.tabBarItem.title = @"视频";
-    controller2.tabBarItem.image = [UIImage systemImageNamed: @"play"];
+//    UIViewController *controller2 = [[UIViewController alloc] init];
+//    controller2.view.backgroundColor = [UIColor yellowColor];
+//    controller2.tabBarItem.title = @"视频";
+//    controller2.tabBarItem.image = [UIImage systemImageNamed: @"play"];
+    
+    GTVideoViewController *videoController = [[GTVideoViewController alloc] init];
+    
 
     UIViewController *controller3 = [[UIViewController alloc] init];
     controller3.view.backgroundColor = [UIColor greenColor];
@@ -52,7 +56,7 @@
     controller4.tabBarItem.image = [UIImage systemImageNamed: @"home"];
 
     
-    [tabbarController setViewControllers: @[viewController,controller2,controller3,controller4]];
+    [tabbarController setViewControllers: @[viewController,videoController,controller3,controller4]];
     tabbarController.delegate = self;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: tabbarController];
 
