@@ -6,37 +6,38 @@
 //
 
 #import "ViewController.h"
+#import "GTNormalTableViewCell.h"
 
 @interface TestView : UIView
 
 @end
 
-@implementation TestView
-
-- (instancetype)init{
-    self = [super init];
-    if (self) {
-
-    }
-    return self;
-}
-
-- (void)willMoveToSuperview:(nullable UIView *)newSuperview {
-    [super willMoveToSuperview: newSuperview];
-}
-- (void)didMoveToSuperview {
-    [super didMoveToSuperview];
-
-}
-- (void)willMoveToWindow:(nullable UIWindow *)newWindow {
-    [super willMoveToWindow: newWindow];
-
-}
-- (void)didMoveToWindow {
-    [super didMoveToWindow];
-
-}
-@end
+//@implementation TestView
+//
+//- (instancetype)init{
+//    self = [super init];
+//    if (self) {
+//
+//    }
+//    return self;
+//}
+//
+//- (void)willMoveToSuperview:(nullable UIView *)newSuperview {
+//    [super willMoveToSuperview: newSuperview];
+//}
+//- (void)didMoveToSuperview {
+//    [super didMoveToSuperview];
+//
+//}
+//- (void)willMoveToWindow:(nullable UIWindow *)newWindow {
+//    [super willMoveToWindow: newWindow];
+//
+//}
+//- (void)didMoveToWindow {
+//    [super didMoveToWindow];
+//
+//}
+//@end
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -116,19 +117,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
-    if(!cell){
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+//    if(!cell){
+//        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+//    }
+//
+//    cell.textLabel.text = [NSString stringWithFormat: @"主标题 -%@",@(indexPath.row)];
+//    cell.detailTextLabel.text = @"副标题";
+//    cell.imageView.image = [UIImage systemImageNamed:@"play"];
+    GTNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    if(!cell) {
+        cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
     }
-    
-    cell.textLabel.text = [NSString stringWithFormat: @"主标题 -%@",@(indexPath.row)];
-    cell.detailTextLabel.text = @"副标题";
-    cell.imageView.image = [UIImage systemImageNamed:@"play"];
+    [cell layoutTableViewCell];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70;
+    return 100;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -8,6 +8,7 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 #import "GTVideoViewController.h"
+#import "GTRecommendViewController.h"
 
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
@@ -30,6 +31,7 @@
     
     viewController.tabBarItem.title = @"新闻";
     viewController.tabBarItem.image = [UIImage systemImageNamed:@"play"];
+    viewController.tabBarItem.selectedImage = [UIImage systemImageNamed:@"stop"];
 
 //    UIViewController *controller1 = [[UIViewController alloc] init];
 //    controller1.view.backgroundColor = [UIColor redColor];
@@ -44,10 +46,16 @@
     GTVideoViewController *videoController = [[GTVideoViewController alloc] init];
     
 
-    UIViewController *controller3 = [[UIViewController alloc] init];
-    controller3.view.backgroundColor = [UIColor greenColor];
-    controller3.tabBarItem.title = @"推荐";
-    controller3.tabBarItem.image = [UIImage systemImageNamed: @"stop"];
+//    UIViewController *controller3 = [[UIViewController alloc] init];
+//    controller3.view.backgroundColor = [UIColor greenColor];
+//    controller3.tabBarItem.title = @"推荐";
+//    controller3.tabBarItem.image = [UIImage systemImageNamed: @"stop"];
+    
+    GTRecommendViewController *recommendView = [[GTRecommendViewController alloc] init];
+//    recommendView.view.backgroundColor = [UIColor greenColor];
+//    recommendView.tabBarItem.title = @"推荐";
+//    recommendView.tabBarItem.image = [UIImage systemImageNamed:@"play"];
+//    recommendView.tabBarItem.selectedImage = [UIImage systemImageNamed:@"stop"];
 
 
     UIViewController *controller4 = [[UIViewController alloc] init];
@@ -56,7 +64,7 @@
     controller4.tabBarItem.image = [UIImage systemImageNamed: @"home"];
 
     
-    [tabbarController setViewControllers: @[viewController,videoController,controller3,controller4]];
+    [tabbarController setViewControllers: @[viewController,videoController,recommendView,controller4]];
     tabbarController.delegate = self;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: tabbarController];
 
