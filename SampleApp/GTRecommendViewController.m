@@ -7,7 +7,7 @@
 
 #import "GTRecommendViewController.h"
 
-@interface GTRecommendViewController ()<UIScrollViewDelegate>
+@interface GTRecommendViewController ()<UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 @end
 
@@ -35,6 +35,15 @@
     for (int i = 0; i < 5; i++) {
         [scrollView addSubview:({
             UIView *view = [[UIView alloc]  initWithFrame: CGRectMake(self.view.bounds.size.width * i, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+            [view addSubview: ({
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
+//                UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(viewClick)];
+                UITapGestureRecognizer *gz = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewClick)];
+                gz.delegate = self;
+                [view addGestureRecognizer: gz];
+                view.backgroundColor = [UIColor yellowColor];
+                view;
+            })];
             view.backgroundColor = [colorArray objectAtIndex:i];
             view;
         })];
@@ -67,5 +76,12 @@
 //- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 //    NSLog(@"scrollViewDidEndDecelerating %@",@(scrollView.contentOffset.x));
 //}
+- (void)viewClick{
+    NSLog(@"viewClick");
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    return YES;
+}
 
 @end
