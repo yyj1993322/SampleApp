@@ -68,7 +68,11 @@
             [self.deleteButton setTitle:@"X" forState: UIControlStateNormal];
             [self.deleteButton setTitle:@"V" forState:UIControlStateHighlighted];
             [self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
-            self.deleteButton.backgroundColor = [UIColor blueColor];
+            self.deleteButton.layer.cornerRadius = 5;
+            self.deleteButton.layer.masksToBounds = YES;
+            self.deleteButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+            self.deleteButton.layer.borderWidth = 1;
+//            self.deleteButton.backgroundColor = [UIColor blueColor];
             self.deleteButton;
         })];
     }
@@ -94,8 +98,12 @@
     
 }
 
+
+
 -(void)deleteButtonClick {
-    NSLog(@"deleteButtonClick");
+    if(self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]){
+        [self.delegate tableViewCell:self clickDeleteButton:self.deleteButton];
+    }
 }
 
 @end

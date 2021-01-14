@@ -8,6 +8,7 @@
 #import "ViewController.h"
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
+#import "GTDeleteCellView.h"
 
 @interface TestView : UIView
 
@@ -40,7 +41,9 @@
 //}
 //@end
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
+@property(nonatomic, strong, readwrite) UITableView *tableView;
+@property(nonatomic, strong, readwrite) NSMutableArray *dataArray;
 
 @end
 
@@ -49,6 +52,10 @@
 -(instancetype)init{
     self = [super init];
     if (self) {
+        _dataArray = @[].mutableCopy;
+        for (int i = 0; i<20; i++) {
+            [_dataArray addObject:@(i)];
+        }
         
     }
     return  self;
@@ -70,6 +77,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
 //    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 //    [self.view addSubview:({
@@ -94,10 +102,10 @@
 //    [view2 addGestureRecognizer:tapGestuew];
     
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame: self.view.bounds];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    [self.view addSubview:tableView];
+    _tableView = [[UITableView alloc] initWithFrame: self.view.bounds];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    [self.view addSubview:_tableView];
     
     
 }
@@ -112,7 +120,7 @@
 //}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return _dataArray.count;
 }
 
 
@@ -129,6 +137,7 @@
     GTNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if(!cell) {
         cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell.delegate = self;
     }
     [cell layoutTableViewCell];
     return cell;
@@ -144,6 +153,17 @@
     controller.view.backgroundColor = [UIColor whiteColor];
     controller.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+-(void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton{
+    GTDeleteCellView *deleteView = [[GTDeleteCellView alloc] initWithFrame:self.view.bounds];
+    CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
+    __weak typeof(self) wself = self;//处理循环引用
+    [deleteView showDeleteView:rect.origin clickBlock:^{
+        __strong typeof(self)strongSelf = wself;
+        [strongSelf.dataArray removeLastObject];
+        [strongSelf.tableView deleteRowsAtIndexPaths:@[[strongSelf.tableView indexPathForCell:tableViewCell]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
 }
 
 
