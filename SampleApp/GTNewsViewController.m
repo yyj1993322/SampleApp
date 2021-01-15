@@ -9,6 +9,7 @@
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
 #import "GTDeleteCellView.h"
+#import "GTListLoader.h"
 
 @interface TestView : UIView
 
@@ -44,7 +45,7 @@
 @interface GTNewsViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
 @property(nonatomic, strong, readwrite) UITableView *tableView;
 @property(nonatomic, strong, readwrite) NSMutableArray *dataArray;
-
+@property(nonatomic, strong, readwrite) GTListLoader *listLoader;
 @end
 
 @implementation GTNewsViewController
@@ -109,7 +110,8 @@
 	_tableView.delegate = self;
 	[self.view addSubview:_tableView];
 
-
+    self.listLoader = [[GTListLoader alloc] init];
+    [self.listLoader loadData];
 }
 
 //- (void)pushController{

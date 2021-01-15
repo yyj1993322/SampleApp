@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		601E809325B0371200F3A51B /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 601E809225B0371200F3A51B /* GTListLoader.m */; };
 		6043D9AD25A450DF00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9AC25A450DF00CACA14 /* AppDelegate.m */; };
 		6043D9B025A450DF00CACA14 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9AF25A450DF00CACA14 /* SceneDelegate.m */; };
 		6043D9B325A450DF00CACA14 /* GTNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9B225A450DF00CACA14 /* GTNewsViewController.m */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		601E809125B0371200F3A51B /* GTListLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListLoader.h; sourceTree = "<group>"; };
+		601E809225B0371200F3A51B /* GTListLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListLoader.m; sourceTree = "<group>"; };
 		6043D9A825A450DF00CACA14 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6043D9AB25A450DF00CACA14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6043D9AC25A450DF00CACA14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -57,9 +60,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		601E809025B036F000F3A51B /* loader */ = {
+			isa = PBXGroup;
+			children = (
+				601E809125B0371200F3A51B /* GTListLoader.h */,
+				601E809225B0371200F3A51B /* GTListLoader.m */,
+			);
+			path = loader;
+			sourceTree = "<group>";
+		};
 		6043D99F25A450DF00CACA14 = {
 			isa = PBXGroup;
 			children = (
+				601E809025B036F000F3A51B /* loader */,
 				6043D9AA25A450DF00CACA14 /* SampleApp */,
 				6043D9A925A450DF00CACA14 /* Products */,
 			);
@@ -175,6 +188,7 @@
 				6043DA1F25A83FEB00CACA14 /* GTNormalTableViewCell.m in Sources */,
 				6043D9B325A450DF00CACA14 /* GTNewsViewController.m in Sources */,
 				6043DA1725A6F62D00CACA14 /* GTVideoViewController.m in Sources */,
+				601E809325B0371200F3A51B /* GTListLoader.m in Sources */,
 				6043DA1B25A800EE00CACA14 /* GTRecommendViewController.m in Sources */,
 				6043D9AD25A450DF00CACA14 /* AppDelegate.m in Sources */,
 				6043D9BE25A450E300CACA14 /* main.m in Sources */,
