@@ -11,10 +11,19 @@
 @interface GTDetailViewController ()<WKNavigationDelegate>
 @property(nonatomic, strong, readwrite) WKWebView *webView;
 @property(nonatomic, strong, readwrite) UIProgressView *progressView;//加载进度条
+@property(nonatomic, copy, readwrite) NSString *articleUrl;
 
 @end
 
 @implementation GTDetailViewController
+
+-(instancetype)initWithUrlString:(NSString *)urlString {
+	self = [super init];
+	if (self) {
+		self.articleUrl = urlString;
+	}
+	return self;
+}
 
 - (void)dealloc {
 	[self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
@@ -35,7 +44,7 @@
 	})];
 
 //    [self.webView loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://time.geekbang.org"]]];
-	[self.webView loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.bilibili.com/"]]];
+	[self.webView loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:self.articleUrl]]];
 	[self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
 }
 

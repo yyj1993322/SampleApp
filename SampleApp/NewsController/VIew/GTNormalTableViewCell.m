@@ -6,6 +6,7 @@
 //
 
 #import "GTNormalTableViewCell.h"
+#import "GTListItem.h"
 
 @interface GTNormalTableViewCell ()
 
@@ -24,10 +25,12 @@
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if (self) {
 		[self.contentView addSubview:({
-			self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 300, 50)];
+			self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 280, 50)];
 //            self.titleLabel.backgroundColor = [UIColor redColor];
 			self.titleLabel.textColor = [UIColor blackColor];
 			self.titleLabel.font = [UIFont systemFontOfSize:16];
+			self.titleLabel.numberOfLines = 2;//高两行
+			self.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;//末尾截断
 			self.titleLabel;
 		})];
 
@@ -57,43 +60,45 @@
 		})];
 
 		[self.contentView addSubview: ({
-			self.myImageView = [[UIImageView alloc] initWithFrame:CGRectMake(300, 15, 70, 70)];
+			self.myImageView = [[UIImageView alloc] initWithFrame:CGRectMake(280, 15, 100, 70)];
 //            self.myImageView.backgroundColor = [UIColor redColor];
 			self.myImageView.contentMode = UIViewContentModeScaleAspectFill;
 			self.myImageView;
 		})];
 
-		[self.contentView addSubview: ({
-			self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(230, 80, 30, 15)];
-			[self.deleteButton setTitle:@"X" forState: UIControlStateNormal];
-			[self.deleteButton setTitle:@"V" forState:UIControlStateHighlighted];
-			[self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
-			self.deleteButton.layer.cornerRadius = 5;
-			self.deleteButton.layer.masksToBounds = YES;
-			self.deleteButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-			self.deleteButton.layer.borderWidth = 1;
-			self.deleteButton.backgroundColor = [UIColor blueColor];
-			self.deleteButton;
-		})];
+//		[self.contentView addSubview: ({
+//			self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(230, 80, 30, 15)];
+//			[self.deleteButton setTitle:@"X" forState: UIControlStateNormal];
+//			[self.deleteButton setTitle:@"V" forState:UIControlStateHighlighted];
+//			[self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
+//			self.deleteButton.layer.cornerRadius = 5;
+//			self.deleteButton.layer.masksToBounds = YES;
+//			self.deleteButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+//			self.deleteButton.layer.borderWidth = 1;
+//			self.deleteButton.backgroundColor = [UIColor blueColor];
+//			self.deleteButton;
+//		})];
 	}
 	return self;
 }
 
--(void)layoutTableViewCell {
-	self.titleLabel.text = @"极客时间ios开发";
+-(void)layoutTableViewCellWithItem:(GTListItem *)item {
+	self.titleLabel.text = item.title;
 
-	self.sourceLabel.text = @"极客时间";
+	self.sourceLabel.text = item.authorName;
 	[self.sourceLabel sizeToFit];
 
-	self.commentLabel.text = @"1999评论";
+	self.commentLabel.text = item.category;
 	[self.commentLabel sizeToFit];
 	self.commentLabel.frame = CGRectMake( self.sourceLabel.frame.origin.x + self.sourceLabel.frame.size.width + 15, self.commentLabel.frame.origin.y, self.commentLabel.frame.size.width, self.commentLabel.frame.size.height);
 
-	self.timeLabel.text = @"三分钟前";
+	self.timeLabel.text = item.date;
 	[self.timeLabel sizeToFit];
 	self.timeLabel.frame = CGRectMake( self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
 
-	self.myImageView.image = [UIImage imageNamed:@"awm"];
+#warning
+	UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.pickUrl]]];
+	self.myImageView.image = image;
 
 
 }

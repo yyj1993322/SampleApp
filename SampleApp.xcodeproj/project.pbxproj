@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		6043DA1F25A83FEB00CACA14 /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043DA1E25A83FEB00CACA14 /* GTNormalTableViewCell.m */; };
 		60883DA125AC38BF00272F0B /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60883DA025AC38BF00272F0B /* GTDetailViewController.m */; };
 		60883DA525ADA38800272F0B /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60883DA425ADA38800272F0B /* GTDeleteCellView.m */; };
+		6095180B25B411430037B1B7 /* GTListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6095180A25B411430037B1B7 /* GTListItem.m */; };
 		DAC5DDC7D915CADF1661A59C /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C6102675066F9065C434E8 /* Pods_SampleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,8 @@
 		60883DA025AC38BF00272F0B /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
 		60883DA325ADA38800272F0B /* GTDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteCellView.h; sourceTree = "<group>"; };
 		60883DA425ADA38800272F0B /* GTDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteCellView.m; sourceTree = "<group>"; };
+		6095180925B411430037B1B7 /* GTListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListItem.h; sourceTree = "<group>"; };
+		6095180A25B411430037B1B7 /* GTListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListItem.m; sourceTree = "<group>"; };
 		88DFB45552A88A569F321960 /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,19 +76,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		601E809025B036F000F3A51B /* loader */ = {
-			isa = PBXGroup;
-			children = (
-				601E809125B0371200F3A51B /* GTListLoader.h */,
-				601E809225B0371200F3A51B /* GTListLoader.m */,
-			);
-			path = loader;
-			sourceTree = "<group>";
-		};
 		6043D99F25A450DF00CACA14 = {
 			isa = PBXGroup;
 			children = (
-				601E809025B036F000F3A51B /* loader */,
 				6043D9AA25A450DF00CACA14 /* SampleApp */,
 				6043D9A925A450DF00CACA14 /* Products */,
 				E460F013645FD38CF1ED5334 /* Pods */,
@@ -104,12 +97,11 @@
 		6043D9AA25A450DF00CACA14 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				6095180125B40FD50037B1B7 /* NewsController */,
 				6043D9AB25A450DF00CACA14 /* AppDelegate.h */,
 				6043D9AC25A450DF00CACA14 /* AppDelegate.m */,
 				6043D9AE25A450DF00CACA14 /* SceneDelegate.h */,
 				6043D9AF25A450DF00CACA14 /* SceneDelegate.m */,
-				6043D9B125A450DF00CACA14 /* GTNewsViewController.h */,
-				6043D9B225A450DF00CACA14 /* GTNewsViewController.m */,
 				6043D9B425A450DF00CACA14 /* Main.storyboard */,
 				6043D9B725A450E300CACA14 /* Assets.xcassets */,
 				6043D9B925A450E300CACA14 /* LaunchScreen.storyboard */,
@@ -119,14 +111,59 @@
 				6043DA1625A6F62D00CACA14 /* GTVideoViewController.m */,
 				6043DA1925A800EE00CACA14 /* GTRecommendViewController.h */,
 				6043DA1A25A800EE00CACA14 /* GTRecommendViewController.m */,
+			);
+			path = SampleApp;
+			sourceTree = "<group>";
+		};
+		6095180125B40FD50037B1B7 /* NewsController */ = {
+			isa = PBXGroup;
+			children = (
+				6095180825B410BF0037B1B7 /* detail */,
+				6095180725B410540037B1B7 /* Controller */,
+				6095180625B410040037B1B7 /* VIew */,
+				6095180225B40FE90037B1B7 /* Model */,
+			);
+			path = NewsController;
+			sourceTree = "<group>";
+		};
+		6095180225B40FE90037B1B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				601E809125B0371200F3A51B /* GTListLoader.h */,
+				601E809225B0371200F3A51B /* GTListLoader.m */,
+				6095180925B411430037B1B7 /* GTListItem.h */,
+				6095180A25B411430037B1B7 /* GTListItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6095180625B410040037B1B7 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
 				6043DA1D25A83FEB00CACA14 /* GTNormalTableViewCell.h */,
 				6043DA1E25A83FEB00CACA14 /* GTNormalTableViewCell.m */,
-				60883D9F25AC38BF00272F0B /* GTDetailViewController.h */,
-				60883DA025AC38BF00272F0B /* GTDetailViewController.m */,
 				60883DA325ADA38800272F0B /* GTDeleteCellView.h */,
 				60883DA425ADA38800272F0B /* GTDeleteCellView.m */,
 			);
-			path = SampleApp;
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		6095180725B410540037B1B7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6043D9B125A450DF00CACA14 /* GTNewsViewController.h */,
+				6043D9B225A450DF00CACA14 /* GTNewsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6095180825B410BF0037B1B7 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				60883D9F25AC38BF00272F0B /* GTDetailViewController.h */,
+				60883DA025AC38BF00272F0B /* GTDetailViewController.m */,
+			);
+			path = detail;
 			sourceTree = "<group>";
 		};
 		E460F013645FD38CF1ED5334 /* Pods */ = {
@@ -135,7 +172,6 @@
 				88DFB45552A88A569F321960 /* Pods-SampleApp.debug.xcconfig */,
 				347C7D2B833FE471E9D3329A /* Pods-SampleApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +294,7 @@
 				6043D9B325A450DF00CACA14 /* GTNewsViewController.m in Sources */,
 				6043DA1725A6F62D00CACA14 /* GTVideoViewController.m in Sources */,
 				601E809325B0371200F3A51B /* GTListLoader.m in Sources */,
+				6095180B25B411430037B1B7 /* GTListItem.m in Sources */,
 				6043DA1B25A800EE00CACA14 /* GTRecommendViewController.m in Sources */,
 				6043D9AD25A450DF00CACA14 /* AppDelegate.m in Sources */,
 				6043D9BE25A450E300CACA14 /* main.m in Sources */,
