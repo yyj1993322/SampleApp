@@ -149,6 +149,7 @@
 	if(!cell) {
 		cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
 		cell.delegate = self;
+        
 	}
 	[cell layoutTableViewCellWithItem:[_dataArray objectAtIndex:indexPath.row]];
 	return cell;
