@@ -166,6 +166,7 @@
 //	controller.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
 //    controller.title = item.title;
 	[self.navigationController pushViewController:controller animated:YES];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniquekey];
 }
 
 -(void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {

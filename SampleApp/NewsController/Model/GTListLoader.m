@@ -21,7 +21,10 @@
 //        NSLog(@"");
 //    }];
 
-
+    NSArray<GTListItem *> *listData = [self _readDataFromLocal];
+    if (listData) {
+        finishBlock(YES, listData);
+    }
 	NSString *urlString = @"http://v.juhe.cn/toutiao/index?type=top&key=97ad001bfcc2082e2eeaf798bad3d54e";
 	NSURL *listURL = [NSURL URLWithString:urlString];
 //    NSURLRequest *listRequest = [NSURLRequest requestWithURL:listURL];
@@ -51,7 +54,19 @@
 					  }];
 
 	[datatask resume];
-//    [self _getSandBoxPath];
+}
+
+-(NSArray<GTListItem *> *)_readDataFromLocal{
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachePath = [pathArray firstObject];
+    NSString *listDataPath = [cachePath stringByAppendingPathComponent:@"GTData/list"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSData *readListData = [fileManager contentsAtPath:listDataPath];
+    id unarchiveObj = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class],[GTListItem class], nil] fromData:readListData error:nil];
+    if([unarchiveObj isKindOfClass:[NSArray class]] && [unarchiveObj count] > 0){
+        return (NSArray<GTListItem *> *)unarchiveObj;
+    }
+    return nil;
 }
 
 -(void)_archiverListDataWithArray:(NSArray<GTListItem *> *)array {
@@ -71,8 +86,8 @@
     
 	[fileManager createFileAtPath:listDataPath contents:listData attributes:nil];
     
-    NSData *readListData = [fileManager contentsAtPath:listDataPath];
-    id unarchiveObj = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class],[GTListItem class], nil] fromData:readListData error:nil];
+//    NSData *readListData = [fileManager contentsAtPath:listDataPath];
+//    id unarchiveObj = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class],[GTListItem class], nil] fromData:readListData error:nil];
 	//查询文件
 //    BOOL fileExist = [fileManager fileExistsAtPath:listDataPath];
 	//删除文件
@@ -84,7 +99,9 @@
 //    [fileHandle writeData:[@"abc" dataUsingEncoding:(NSUTF8StringEncoding)]];
 //    [fileHandle synchronizeFile];//立即io写入磁盘
 //    [fileHandle closeFile];
-    NSLog(@"");
+//    [[NSUserDefaults standardUserDefaults] setObject:listData forKey:@"listData"];
+//    NSData *test = [[NSUserDefaults standardUserDefaults] dataForKey:@"listData"];
+//    NSLog(@"");
 
 
 }

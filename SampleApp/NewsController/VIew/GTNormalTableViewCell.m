@@ -83,6 +83,13 @@
 }
 
 -(void)layoutTableViewCellWithItem:(GTListItem *)item {
+    
+    BOOL hasRead = [[NSUserDefaults standardUserDefaults] boolForKey:item.uniquekey];
+    if (hasRead) {
+        self.titleLabel.textColor = [UIColor lightGrayColor];
+    }else {
+        self.titleLabel.textColor = [UIColor blackColor];
+    }
 	self.titleLabel.text = item.title;
 
 	self.sourceLabel.text = item.authorName;
