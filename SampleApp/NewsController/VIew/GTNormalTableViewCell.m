@@ -104,8 +104,13 @@
 	self.timeLabel.frame = CGRectMake( self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
 
 #warning
-	UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.pickUrl]]];
-	self.myImageView.image = image;
+    NSThread *downloadImageThread = [[NSThread alloc] initWithBlock:^{
+        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.pickUrl]]];
+        self.myImageView.image = image;
+    }];
+    downloadImageThread.name = @"downloadImageThread";
+    [downloadImageThread start];
+    NSLog(@"");
 
 
 }
