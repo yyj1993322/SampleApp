@@ -7,6 +7,7 @@
 
 #import "GTNormalTableViewCell.h"
 #import "GTListItem.h"
+#import "SDWebImage.h"
 
 @interface GTNormalTableViewCell ()
 
@@ -111,19 +112,19 @@
 //    downloadImageThread.name = @"downloadImageThread";
 //    [downloadImageThread start];
     
-    dispatch_queue_main_t mainQueue = dispatch_get_main_queue();
-    dispatch_queue_global_t downloadQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(downloadQueue, ^{
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.pickUrl]]];
-        dispatch_async(mainQueue, ^{
-            self.myImageView.image = image;
-        });
-    });
+//    dispatch_queue_main_t mainQueue = dispatch_get_main_queue();
+//    dispatch_queue_global_t downloadQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_async(downloadQueue, ^{
+//        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.pickUrl]]];
+//        dispatch_async(mainQueue, ^{
+//            self.myImageView.image = image;
+//        });
+//    });
+    [self.myImageView sd_setImageWithURL:[NSURL URLWithString:item.pickUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            NSLog(@"");
+        }];
     
-    
-    NSLog(@"");
-
-
+   
 }
 
 
