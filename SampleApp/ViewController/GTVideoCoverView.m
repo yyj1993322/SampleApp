@@ -9,6 +9,11 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface GTVideoCoverView ()
+
+@property(nonatomic, strong, readwrite) AVPlayerLayer *playrLayer;
+@property(nonatomic, strong, readwrite) AVPlayerItem *videoItem;
+@property(nonatomic, strong, readwrite) AVPlayer *avPlayer;
+
 @property(nonatomic, strong, readwrite) UIImageView *coverView;
 @property(nonatomic, strong, readwrite) UIImageView *playButton;
 @property(nonatomic, strong, readwrite) NSString *videoUrl;
@@ -32,8 +37,14 @@
 		UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_tapToPlay)];
 		[self addGestureRecognizer:tapGesture];
 		self.backgroundColor = [UIColor redColor];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_handlePlayEnd) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
 	}
 	return self;
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - public
@@ -49,18 +60,24 @@
 -(void)_tapToPlay {
     NSURL *videoURL = [NSURL URLWithString:_videoUrl];
     
-//    AVAsset *asset = [AVAsset assetWithURL: videoURL];
-//
-//    AVPlayerItem *videoItem = [AVPlayerItem playerItemWithAsset:asset];
+    AVAsset *asset = [AVAsset assetWithURL: videoURL];
+
+    _videoItem = [AVPlayerItem playerItemWithAsset:asset];
     
-    AVPlayer *avPlayer = [AVPlayer playerWithURL:videoURL];
+    _avPlayer = [AVPlayer playerWithPlayerItem:_videoItem];
     
-    AVPlayerLayer *playrLayer = [AVPlayerLayer playerLayerWithPlayer:avPlayer];
-    playrLayer.frame = _coverView.bounds;
-    [_coverView.layer addSublayer:playrLayer];
-    [avPlayer play];
+    _playrLayer = [AVPlayerLayer playerLayerWithPlayer:_avPlayer];
+    _playrLayer.frame = _coverView.bounds;
+    [_coverView.layer addSublayer:_playrLayer];
+    [_avPlayer play];
     
     NSLog(@"");
+}
+
+-(void)_handlePlayEnd{
+    [_playrLayer removeFromSuperlayer];
+    _videoItem = nil;
+    _avPlayer = nil;
 }
 
 @end
