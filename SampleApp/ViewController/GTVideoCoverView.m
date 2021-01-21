@@ -63,13 +63,14 @@
     AVAsset *asset = [AVAsset assetWithURL: videoURL];
 
     _videoItem = [AVPlayerItem playerItemWithAsset:asset];
+    [_videoItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
     
     _avPlayer = [AVPlayer playerWithPlayerItem:_videoItem];
     
     _playrLayer = [AVPlayerLayer playerLayerWithPlayer:_avPlayer];
     _playrLayer.frame = _coverView.bounds;
     [_coverView.layer addSublayer:_playrLayer];
-    [_avPlayer play];
+    
     
     NSLog(@"");
 }
@@ -78,6 +79,18 @@
     [_playrLayer removeFromSuperlayer];
     _videoItem = nil;
     _avPlayer = nil;
+}
+
+#pragma - KVO
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    
+    if ([keyPath isEqualToString:@"status"]) {
+        if (((NSNumber *)[change objectForKey:NSKeyValueChangeNewKey]).integerValue == AVPlayerItemStatusReadyToPlay) {
+            [_avPlayer play];
+        }else{
+            NSLog(@"");
+        }
+    }
 }
 
 @end
