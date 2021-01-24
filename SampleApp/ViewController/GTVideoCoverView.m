@@ -7,12 +7,11 @@
 
 #import "GTVideoCoverView.h"
 #import <AVFoundation/AVFoundation.h>
+#import "GTVideoPlayer.h"
 
 @interface GTVideoCoverView ()
 
-@property(nonatomic, strong, readwrite) AVPlayerLayer *playrLayer;
-@property(nonatomic, strong, readwrite) AVPlayerItem *videoItem;
-@property(nonatomic, strong, readwrite) AVPlayer *avPlayer;
+
 
 @property(nonatomic, strong, readwrite) UIImageView *coverView;
 @property(nonatomic, strong, readwrite) UIImageView *playButton;
@@ -38,73 +37,25 @@
 		[self addGestureRecognizer:tapGesture];
 		self.backgroundColor = [UIColor redColor];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_handlePlayEnd) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
 	}
 	return self;
 }
 
 -(void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [_videoItem removeObserver:self forKeyPath:@"status"];
-    [_videoItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
+    
 }
 
 #pragma mark - public
 -(void)layoutWithVideoCoverUrl:(NSString *)videoCoverUrl videoUrl:(NSString *)videoUrl {
 	_coverView.image = [UIImage imageNamed:videoCoverUrl];
     _playButton.image = [UIImage systemImageNamed:@"play"];
-//    _playButton.backgroundColor = [UIColor whiteColor];
     _playButton.layer.cornerRadius = 5;
 	_videoUrl = videoUrl;
 }
 
-#pragma mark - private method
--(void)_tapToPlay {
-    NSURL *videoURL = [NSURL URLWithString:_videoUrl];
-    
-    AVAsset *asset = [AVAsset assetWithURL: videoURL];
-
-    _videoItem = [AVPlayerItem playerItemWithAsset:asset];
-    [_videoItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
-    [_videoItem addObserver:self forKeyPath:@"loadedTimeRanges" options:(NSKeyValueObservingOptionNew) context:nil];
-    CMTime duration = _videoItem.duration;
-    CGFloat videoDuration = CMTimeGetSeconds(duration);
-    
-    
-    _avPlayer = [AVPlayer playerWithPlayerItem:_videoItem];
-    [_avPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
-        NSLog(@"播放进度: %@",@(CMTimeGetSeconds(time)));
-    }];
-    
-    _playrLayer = [AVPlayerLayer playerLayerWithPlayer:_avPlayer];
-    _playrLayer.frame = _coverView.bounds;
-    [_coverView.layer addSublayer:_playrLayer];
-    
-    
-    NSLog(@"");
+-(void)_tapToPlay{
+    [[GTVideoPlayer player] playVideoWithUrl:_videoUrl attachView:_coverView];
 }
 
--(void)_handlePlayEnd{
-//    [_playrLayer removeFromSuperlayer];
-//    _videoItem = nil;
-//    _avPlayer = nil;
-    [_avPlayer seekToTime:CMTimeMake(0, 1)];
-    [_avPlayer play];
-    
-}
-
-#pragma - KVO
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    
-    if ([keyPath isEqualToString:@"status"]) {
-        if (((NSNumber *)[change objectForKey:NSKeyValueChangeNewKey]).integerValue == AVPlayerItemStatusReadyToPlay) {
-            [_avPlayer play];
-        }else{
-            NSLog(@"");
-        }
-    }else if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
-        NSLog(@"缓冲状态：%@",[change objectForKey:NSKeyValueChangeNewKey]);
-    }
-}
 
 @end

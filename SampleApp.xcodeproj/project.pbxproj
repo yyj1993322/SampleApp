@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		601996C725BAB61400D8C5B3 /* GTVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 601996C625BAB61400D8C5B3 /* GTVideoPlayer.m */; };
 		601E809325B0371200F3A51B /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 601E809225B0371200F3A51B /* GTListLoader.m */; };
 		6043D9AD25A450DF00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9AC25A450DF00CACA14 /* AppDelegate.m */; };
 		6043D9B025A450DF00CACA14 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9AF25A450DF00CACA14 /* SceneDelegate.m */; };
@@ -28,6 +29,8 @@
 /* Begin PBXFileReference section */
 		10C6102675066F9065C434E8 /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		347C7D2B833FE471E9D3329A /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		601996C525BAB61400D8C5B3 /* GTVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoPlayer.h; sourceTree = "<group>"; };
+		601996C625BAB61400D8C5B3 /* GTVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoPlayer.m; sourceTree = "<group>"; };
 		601E809125B0371200F3A51B /* GTListLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListLoader.h; sourceTree = "<group>"; };
 		601E809225B0371200F3A51B /* GTListLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListLoader.m; sourceTree = "<group>"; };
 		6043D9A825A450DF00CACA14 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +127,8 @@
 				6043DA1625A6F62D00CACA14 /* GTVideoViewController.m */,
 				608AA72625B824F5004F667D /* GTVideoCoverView.h */,
 				608AA72725B824F5004F667D /* GTVideoCoverView.m */,
+				601996C525BAB61400D8C5B3 /* GTVideoPlayer.h */,
+				601996C625BAB61400D8C5B3 /* GTVideoPlayer.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				6043D9BE25A450E300CACA14 /* main.m in Sources */,
 				6043D9B025A450DF00CACA14 /* SceneDelegate.m in Sources */,
 				608AA72825B824F5004F667D /* GTVideoCoverView.m in Sources */,
+				601996C725BAB61400D8C5B3 /* GTVideoPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
