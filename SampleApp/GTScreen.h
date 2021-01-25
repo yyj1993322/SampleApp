@@ -12,6 +12,18 @@ NS_ASSUME_NONNULL_BEGIN
 //是否横屏
 #define IS_LANDSCAPE (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]))
 
+#define IS_IPHONE_X_XR_MAX (IS_IPHONE_MAX || IS_IPHONE_XR || IS_IPHONE_X)
+
+#define IS_IPHONE_MAX (SCREEN_WIDTH ==  [GTScreen sizeFor65Inc].width && SCREEN_HEIGHT == [GTScreen sizeFor65Inc].height)
+
+#define IS_IPHONE_XR (SCREEN_WIDTH ==  [GTScreen sizeFor61Inc].width && SCREEN_HEIGHT == [GTScreen sizeFor61Inc].height && [UIScreen mainScreen].scale == 2)
+
+#define IS_IPHONE_X (SCREEN_WIDTH ==  [GTScreen sizeFor58Inc].width && SCREEN_HEIGHT == [GTScreen sizeFor58Inc].height && [UIScreen mainScreen].scale == 3)
+
+#define STATUSBARHEIGHT (IS_IPHONE_X_XR_MAX ? 44 : 22)
+
+
+
 #define SCREEN_WIDTH (IS_LANDSCAPE ? [[UIScreen mainScreen] bounds].size.height : [[UIScreen mainScreen] bounds].size.width)
 
 #define SCREEN_HEIGHT (IS_LANDSCAPE ? [[UIScreen mainScreen] bounds].size.width : [[UIScreen mainScreen] bounds].size.height)
@@ -34,6 +46,13 @@ static inline CGRect UIRectUIAdapter(x,y,width,height){
 }
 
 @interface GTScreen : NSObject
+
+//iphone xs max
++(CGSize)sizeFor65Inc;
+//iphone xr
++(CGSize)sizeFor61Inc;
+//iphone x
++(CGSize)sizeFor58Inc;
 
 @end
 

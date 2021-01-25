@@ -6,6 +6,7 @@
 //
 
 #import "GTDetailViewController.h"
+#import "GTScreen.h"
 #import <WebKit/WebKit.h>
 
 @interface GTDetailViewController ()<WKNavigationDelegate>
@@ -33,7 +34,7 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
 	[self.view addSubview:({
-		self.webView = [[WKWebView alloc] initWithFrame: CGRectMake(0, 88, self.view.frame.size.width, self.view.frame.size.height - 88)];
+		self.webView = [[WKWebView alloc] initWithFrame: CGRectMake(0, STATUSBARHEIGHT + 44, self.view.frame.size.width, self.view.frame.size.height - STATUSBARHEIGHT + 44)];
 		self.webView.navigationDelegate = self;
 		self.webView;
 	})];

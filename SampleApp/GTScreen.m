@@ -10,5 +10,17 @@
 
 @implementation GTScreen
 
+//iphone xs max
++(CGSize)sizeFor65Inc{
+    return CGSizeMake(414,896);
+}
+//iphone xr
++(CGSize)sizeFor61Inc{
+    return CGSizeMake(414,896);
+}
+//iphone x
++(CGSize)sizeFor58Inc{
+    return CGSizeMake(375,812);
+}
 
 @end

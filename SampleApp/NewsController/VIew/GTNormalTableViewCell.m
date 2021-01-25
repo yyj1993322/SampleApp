@@ -27,7 +27,7 @@
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if (self) {
 		[self.contentView addSubview:({
-			self.titleLabel = [[UILabel alloc] initWithFrame:UIRect(20, 15, 280, 50)];
+			self.titleLabel = [[UILabel alloc] initWithFrame:UIRect(20, 15, 250, 50)];
 //            self.titleLabel.backgroundColor = [UIColor redColor];
 			self.titleLabel.textColor = [UIColor blackColor];
 			self.titleLabel.font = [UIFont systemFontOfSize:16];
@@ -41,7 +41,7 @@
 //            self.sourceLabel.backgroundColor = [UIColor redColor];
 			self.sourceLabel.textColor = [UIColor blueColor];
 			self.sourceLabel.font = [UIFont systemFontOfSize:12];
-			self.sourceLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
+			self.sourceLabel.lineBreakMode = NSLineBreakByTruncatingTail;
 			self.sourceLabel;
 		})];
 
@@ -50,6 +50,7 @@
 //            self.commentLabel.backgroundColor = [UIColor redColor];
 			self.commentLabel.textColor = [UIColor blueColor];
 			self.commentLabel.font = [UIFont systemFontOfSize:12];
+            self.commentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
 			self.commentLabel;
 		})];
 
@@ -58,6 +59,7 @@
 //            self.timeLabel.backgroundColor = [UIColor redColor];
 			self.timeLabel.textColor = [UIColor blueColor];
 			self.timeLabel.font = [UIFont systemFontOfSize:12];
+            self.timeLabel.lineBreakMode = NSLineBreakByTruncatingTail;
 			self.timeLabel;
 		})];
 
