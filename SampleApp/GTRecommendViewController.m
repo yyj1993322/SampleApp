@@ -77,7 +77,14 @@
 //    NSLog(@"scrollViewDidEndDecelerating %@",@(scrollView.contentOffset.x));
 //}
 - (void)viewClick {
-	NSLog(@"viewClick");
+    
+    NSURL *urlScheme = [NSURL URLWithString:@"testScheme://"];
+    
+    BOOL canOpenURL = [[UIApplication sharedApplication] canOpenURL:urlScheme];
+    
+    [[UIApplication sharedApplication] openURL:urlScheme options:nil completionHandler:^(BOOL success) {
+            NSLog(@"");
+    }];
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
