@@ -16,11 +16,11 @@
 		6043D9B325A450DF00CACA14 /* GTNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9B225A450DF00CACA14 /* GTNewsViewController.m */; };
 		6043D9B625A450DF00CACA14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6043D9B425A450DF00CACA14 /* Main.storyboard */; };
 		6043D9B825A450E300CACA14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6043D9B725A450E300CACA14 /* Assets.xcassets */; };
-		6043D9BB25A450E300CACA14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6043D9B925A450E300CACA14 /* LaunchScreen.storyboard */; };
 		6043D9BE25A450E300CACA14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9BD25A450E300CACA14 /* main.m */; };
 		6043DA1725A6F62D00CACA14 /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043DA1625A6F62D00CACA14 /* GTVideoViewController.m */; };
 		6043DA1B25A800EE00CACA14 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043DA1A25A800EE00CACA14 /* GTRecommendViewController.m */; };
 		6043DA1F25A83FEB00CACA14 /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043DA1E25A83FEB00CACA14 /* GTNormalTableViewCell.m */; };
+		6045BCF025BFC1A0004A721F /* GTSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6045BCEF25BFC1A0004A721F /* GTSplashView.m */; };
 		60883DA125AC38BF00272F0B /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60883DA025AC38BF00272F0B /* GTDetailViewController.m */; };
 		60883DA525ADA38800272F0B /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60883DA425ADA38800272F0B /* GTDeleteCellView.m */; };
 		608AA72825B824F5004F667D /* GTVideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 608AA72725B824F5004F667D /* GTVideoCoverView.m */; };
@@ -48,7 +48,6 @@
 		6043D9B225A450DF00CACA14 /* GTNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNewsViewController.m; sourceTree = "<group>"; };
 		6043D9B525A450DF00CACA14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6043D9B725A450E300CACA14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6043D9BA25A450E300CACA14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6043D9BC25A450E300CACA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6043D9BD25A450E300CACA14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6043DA1525A6F62D00CACA14 /* GTVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
@@ -57,6 +56,8 @@
 		6043DA1A25A800EE00CACA14 /* GTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendViewController.m; sourceTree = "<group>"; };
 		6043DA1D25A83FEB00CACA14 /* GTNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNormalTableViewCell.h; sourceTree = "<group>"; };
 		6043DA1E25A83FEB00CACA14 /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
+		6045BCEE25BFC1A0004A721F /* GTSplashView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTSplashView.h; sourceTree = "<group>"; };
+		6045BCEF25BFC1A0004A721F /* GTSplashView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSplashView.m; sourceTree = "<group>"; };
 		60883D9F25AC38BF00272F0B /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
 		60883DA025AC38BF00272F0B /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
 		60883DA325ADA38800272F0B /* GTDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteCellView.h; sourceTree = "<group>"; };
@@ -117,13 +118,14 @@
 				6043D9AF25A450DF00CACA14 /* SceneDelegate.m */,
 				6043D9B425A450DF00CACA14 /* Main.storyboard */,
 				6043D9B725A450E300CACA14 /* Assets.xcassets */,
-				6043D9B925A450E300CACA14 /* LaunchScreen.storyboard */,
 				6043D9BC25A450E300CACA14 /* Info.plist */,
 				6043D9BD25A450E300CACA14 /* main.m */,
 				6043DA1925A800EE00CACA14 /* GTRecommendViewController.h */,
 				6043DA1A25A800EE00CACA14 /* GTRecommendViewController.m */,
 				600797E425BE6B7100AEC1CA /* GTScreen.h */,
 				600797E525BE6B7100AEC1CA /* GTScreen.m */,
+				6045BCEE25BFC1A0004A721F /* GTSplashView.h */,
+				6045BCEF25BFC1A0004A721F /* GTSplashView.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -261,7 +263,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6043D9BB25A450E300CACA14 /* LaunchScreen.storyboard in Resources */,
 				6043D9B825A450E300CACA14 /* Assets.xcassets in Resources */,
 				6043D9B625A450DF00CACA14 /* Main.storyboard in Resources */,
 			);
@@ -326,6 +327,7 @@
 				60319CBF25BD3FA5005FAAB4 /* GTVideoToolbar.m in Sources */,
 				6095180B25B411430037B1B7 /* GTListItem.m in Sources */,
 				6043DA1B25A800EE00CACA14 /* GTRecommendViewController.m in Sources */,
+				6045BCF025BFC1A0004A721F /* GTSplashView.m in Sources */,
 				6043D9AD25A450DF00CACA14 /* AppDelegate.m in Sources */,
 				6043D9BE25A450E300CACA14 /* main.m in Sources */,
 				6043D9B025A450DF00CACA14 /* SceneDelegate.m in Sources */,
@@ -345,14 +347,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6043D9B925A450E300CACA14 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6043D9BA25A450E300CACA14 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -360,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -419,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

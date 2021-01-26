@@ -9,6 +9,7 @@
 #import "GTNewsViewController.h"
 #import "GTVideoViewController.h"
 #import "GTRecommendViewController.h"
+#import "GTSplashView.h"
 
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
@@ -70,8 +71,11 @@
 
 	// MainTabBarController 是 CYLTabBarController 的子类
 	self.window.rootViewController = navigationController;
-
 	[self.window makeKeyAndVisible];
+    [self.window addSubview: ({
+        GTSplashView *splashView = [[GTSplashView alloc] initWithFrame:self.window.bounds];
+        splashView;
+    })];
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
