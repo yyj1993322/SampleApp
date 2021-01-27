@@ -10,6 +10,7 @@
 		600797E625BE6B7100AEC1CA /* GTScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 600797E525BE6B7100AEC1CA /* GTScreen.m */; };
 		601996C725BAB61400D8C5B3 /* GTVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 601996C625BAB61400D8C5B3 /* GTVideoPlayer.m */; };
 		601E809325B0371200F3A51B /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 601E809225B0371200F3A51B /* GTListLoader.m */; };
+		602697C425C1114500F9F567 /* GTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 602697C325C1114500F9F567 /* GTMediator.m */; };
 		60319CBF25BD3FA5005FAAB4 /* GTVideoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */; };
 		6043D9AD25A450DF00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9AC25A450DF00CACA14 /* AppDelegate.m */; };
 		6043D9B025A450DF00CACA14 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9AF25A450DF00CACA14 /* SceneDelegate.m */; };
@@ -37,6 +38,9 @@
 		601996C625BAB61400D8C5B3 /* GTVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoPlayer.m; sourceTree = "<group>"; };
 		601E809125B0371200F3A51B /* GTListLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListLoader.h; sourceTree = "<group>"; };
 		601E809225B0371200F3A51B /* GTListLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListLoader.m; sourceTree = "<group>"; };
+		602697BE25C1085D00F9F567 /* SampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleApp.entitlements; sourceTree = "<group>"; };
+		602697C225C1114500F9F567 /* GTMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMediator.h; sourceTree = "<group>"; };
+		602697C325C1114500F9F567 /* GTMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTMediator.m; sourceTree = "<group>"; };
 		60319CBD25BD3FA5005FAAB4 /* GTVideoToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoToolbar.h; sourceTree = "<group>"; };
 		60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoToolbar.m; sourceTree = "<group>"; };
 		6043D9A825A450DF00CACA14 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +114,7 @@
 		6043D9AA25A450DF00CACA14 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				602697BE25C1085D00F9F567 /* SampleApp.entitlements */,
 				608AA72425B81EA4004F667D /* ViewController */,
 				6095180125B40FD50037B1B7 /* NewsController */,
 				6043D9AB25A450DF00CACA14 /* AppDelegate.h */,
@@ -126,6 +131,8 @@
 				600797E525BE6B7100AEC1CA /* GTScreen.m */,
 				6045BCEE25BFC1A0004A721F /* GTSplashView.h */,
 				6045BCEF25BFC1A0004A721F /* GTSplashView.m */,
+				602697C225C1114500F9F567 /* GTMediator.h */,
+				602697C325C1114500F9F567 /* GTMediator.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -323,6 +330,7 @@
 				6043DA1F25A83FEB00CACA14 /* GTNormalTableViewCell.m in Sources */,
 				6043D9B325A450DF00CACA14 /* GTNewsViewController.m in Sources */,
 				6043DA1725A6F62D00CACA14 /* GTVideoViewController.m in Sources */,
+				602697C425C1114500F9F567 /* GTMediator.m in Sources */,
 				601E809325B0371200F3A51B /* GTListLoader.m in Sources */,
 				60319CBF25BD3FA5005FAAB4 /* GTVideoToolbar.m in Sources */,
 				6095180B25B411430037B1B7 /* GTListItem.m in Sources */,
@@ -470,6 +478,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SampleApp/SampleApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LV58Y697NZ;
 				INFOPLIST_FILE = SampleApp/Info.plist;
@@ -480,6 +490,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yangjoker.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -490,6 +501,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SampleApp/SampleApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LV58Y697NZ;
 				INFOPLIST_FILE = SampleApp/Info.plist;
@@ -500,6 +513,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yangjoker.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

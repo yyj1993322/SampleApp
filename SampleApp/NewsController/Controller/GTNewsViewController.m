@@ -11,6 +11,7 @@
 #import "GTDeleteCellView.h"
 #import "GTListLoader.h"
 #import "GTListItem.h"
+#import "GTMediator.h"
 
 @interface TestView : UIView
 
@@ -161,11 +162,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GTListItem *item = [self.dataArray objectAtIndex:indexPath.row];
-	GTDetailViewController *controller = [[GTDetailViewController alloc] initWithUrlString:item.articleUrl];
-	controller.view.backgroundColor = [UIColor whiteColor];
-//	controller.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
-//    controller.title = item.title;
-	[self.navigationController pushViewController:controller animated:YES];
+    __kindof UIViewController *detailController = [GTMediator detailViewCOntrollerWithUrl:item.articleUrl];
+    detailController.view.backgroundColor = [UIColor whiteColor];
+	detailController.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+//    detailController.title = item.title;
+	[self.navigationController pushViewController:detailController animated:YES];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniquekey];
 }
 
