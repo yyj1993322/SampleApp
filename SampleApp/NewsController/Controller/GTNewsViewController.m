@@ -110,14 +110,14 @@
 	_tableView.dataSource = self;
 	_tableView.delegate = self;
 	[self.view addSubview:_tableView];
-    __weak typeof(self) wself = self;
-    self.listLoader = [[GTListLoader alloc] init];
-    [self.listLoader loadListDataWithFinishBlock:^(BOOL success, NSArray<GTListItem *> * _Nonnull dataArray) {
-        __strong typeof(wself) strongSelf = wself;
-        strongSelf.dataArray = dataArray;
-        [strongSelf.tableView reloadData];
-        NSLog(@"");
-    }];
+	__weak typeof(self) wself = self;
+	self.listLoader = [[GTListLoader alloc] init];
+	[self.listLoader loadListDataWithFinishBlock:^(BOOL success, NSArray<GTListItem *> * _Nonnull dataArray) {
+	         __strong typeof(wself) strongSelf = wself;
+	         strongSelf.dataArray = dataArray;
+	         [strongSelf.tableView reloadData];
+	         NSLog(@"");
+	 }];
 }
 
 //- (void)pushController{
@@ -150,7 +150,7 @@
 	if(!cell) {
 		cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
 		cell.delegate = self;
-        
+
 	}
 	[cell layoutTableViewCellWithItem:[_dataArray objectAtIndex:indexPath.row]];
 	return cell;
@@ -161,15 +161,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    GTListItem *item = [self.dataArray objectAtIndex:indexPath.row];
+	GTListItem *item = [self.dataArray objectAtIndex:indexPath.row];
 //    __kindof UIViewController *detailController = [GTMediator detailViewCOntrollerWithUrl:item.articleUrl];
 //    detailController.view.backgroundColor = [UIColor whiteColor];
 //	detailController.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
 //    detailController.title = item.title;
 //	[self.navigationController pushViewController:detailController animated:YES];
-    [GTMediator openUrl:@"detail://" params:@{@"url":item.articleUrl,@"controller":self.navigationController}];
-    
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniquekey];
+//    [GTMediator openUrl:@"detail://" params:@{@"url":item.articleUrl,@"controller":self.navigationController}];
+
+	Class cls = [GTMediator classForProtol:@protocol(GTDetailViewControllerProtocol)];
+//    [[cls alloc] detailViewControllerWithUrl: item.articleUrl];
+	[self.navigationController pushViewController:[[cls alloc] detailViewControllerWithUrl: item.articleUrl] animated:YES];
+
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniquekey];
 }
 
 -(void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
