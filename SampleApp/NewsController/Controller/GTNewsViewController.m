@@ -162,11 +162,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GTListItem *item = [self.dataArray objectAtIndex:indexPath.row];
-    __kindof UIViewController *detailController = [GTMediator detailViewCOntrollerWithUrl:item.articleUrl];
-    detailController.view.backgroundColor = [UIColor whiteColor];
-	detailController.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+//    __kindof UIViewController *detailController = [GTMediator detailViewCOntrollerWithUrl:item.articleUrl];
+//    detailController.view.backgroundColor = [UIColor whiteColor];
+//	detailController.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
 //    detailController.title = item.title;
-	[self.navigationController pushViewController:detailController animated:YES];
+//	[self.navigationController pushViewController:detailController animated:YES];
+    [GTMediator openUrl:@"detail://" params:@{@"url":item.articleUrl,@"controller":self.navigationController}];
+    
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniquekey];
 }
 
