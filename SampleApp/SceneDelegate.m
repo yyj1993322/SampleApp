@@ -10,6 +10,7 @@
 #import "GTVideoViewController.h"
 #import "GTRecommendViewController.h"
 #import "GTSplashView.h"
+#import "GTMineViewController.h"
 
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
@@ -30,9 +31,9 @@
 	GTNewsViewController *newsViewController = [[GTNewsViewController alloc] init];
 
 
-	newsViewController.tabBarItem.title = @"新闻";
-	newsViewController.tabBarItem.image = [UIImage systemImageNamed:@"play"];
-	newsViewController.tabBarItem.selectedImage = [UIImage systemImageNamed:@"stop"];
+//	newsViewController.tabBarItem.title = @"新闻";
+//	newsViewController.tabBarItem.image = [UIImage systemImageNamed:@"play"];
+//	newsViewController.tabBarItem.selectedImage = [UIImage systemImageNamed:@"stop"];
 
 //    UIViewController *controller1 = [[UIViewController alloc] init];
 //    controller1.view.backgroundColor = [UIColor redColor];
@@ -59,10 +60,10 @@
 //    recommendView.tabBarItem.selectedImage = [UIImage systemImageNamed:@"stop"];
 
 
-	UIViewController *mineController = [[UIViewController alloc] init];
-	mineController.view.backgroundColor = [UIColor lightGrayColor];
-	mineController.tabBarItem.title = @"我的";
-	mineController.tabBarItem.image = [UIImage systemImageNamed: @"home"];
+    GTMineViewController *mineController = [[GTMineViewController alloc] init];
+//	mineController.view.backgroundColor = [UIColor lightGrayColor];
+//	mineController.tabBarItem.title = @"我的";
+//	mineController.tabBarItem.image = [UIImage systemImageNamed: @"home"];
 
 
 	[tabbarController setViewControllers: @[newsViewController,videoController,recommendView,mineController]];

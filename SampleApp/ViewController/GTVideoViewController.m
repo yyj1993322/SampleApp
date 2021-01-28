@@ -19,8 +19,8 @@
     self = [super init];
     if (self) {
         self.tabBarItem.title = @"视频";
-        self.tabBarItem.image = [UIImage systemImageNamed:@"play"];
-        self.tabBarItem.selectedImage = [UIImage systemImageNamed:@"stop"];
+        self.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/video@2x.png"];
+        self.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/video_selected@2x.png"];
     }
     return self;
 }
