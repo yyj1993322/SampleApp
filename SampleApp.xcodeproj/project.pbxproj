@@ -26,6 +26,8 @@
 		60883DA525ADA38800272F0B /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60883DA425ADA38800272F0B /* GTDeleteCellView.m */; };
 		608AA72825B824F5004F667D /* GTVideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 608AA72725B824F5004F667D /* GTVideoCoverView.m */; };
 		6095180B25B411430037B1B7 /* GTListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6095180A25B411430037B1B7 /* GTListItem.m */; };
+		60B6A0D025C29B8300079FBB /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60B6A0CF25C29B8300079FBB /* icon.bundle */; };
+		60D5DA3F25C2546A0077B992 /* libGTStatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D5DA3D25C254690077B992 /* libGTStatic.a */; };
 		DAC5DDC7D915CADF1661A59C /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C6102675066F9065C434E8 /* Pods_SampleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,10 @@
 		608AA72725B824F5004F667D /* GTVideoCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoCoverView.m; sourceTree = "<group>"; };
 		6095180925B411430037B1B7 /* GTListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListItem.h; sourceTree = "<group>"; };
 		6095180A25B411430037B1B7 /* GTListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListItem.m; sourceTree = "<group>"; };
+		60B6A0CF25C29B8300079FBB /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
+		60D5DA3C25C254690077B992 /* GTStaticTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTStaticTest.h; sourceTree = "<group>"; };
+		60D5DA3D25C254690077B992 /* libGTStatic.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGTStatic.a; sourceTree = "<group>"; };
+		60D5DA3E25C2546A0077B992 /* GTStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTStatic.h; sourceTree = "<group>"; };
 		88DFB45552A88A569F321960 /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60D5DA3F25C2546A0077B992 /* libGTStatic.a in Frameworks */,
 				DAC5DDC7D915CADF1661A59C /* Pods_SampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +121,8 @@
 		6043D9AA25A450DF00CACA14 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				60B6A0D225C29C0200079FBB /* MIneController */,
+				60D5DA3625C24F8B0077B992 /* GTFramwork */,
 				602697BE25C1085D00F9F567 /* SampleApp.entitlements */,
 				608AA72425B81EA4004F667D /* ViewController */,
 				6095180125B40FD50037B1B7 /* NewsController */,
@@ -123,6 +132,7 @@
 				6043D9AF25A450DF00CACA14 /* SceneDelegate.m */,
 				6043D9B425A450DF00CACA14 /* Main.storyboard */,
 				6043D9B725A450E300CACA14 /* Assets.xcassets */,
+				60B6A0CF25C29B8300079FBB /* icon.bundle */,
 				6043D9BC25A450E300CACA14 /* Info.plist */,
 				6043D9BD25A450E300CACA14 /* main.m */,
 				6043DA1925A800EE00CACA14 /* GTRecommendViewController.h */,
@@ -203,6 +213,23 @@
 			path = detail;
 			sourceTree = "<group>";
 		};
+		60B6A0D225C29C0200079FBB /* MIneController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MIneController;
+			sourceTree = "<group>";
+		};
+		60D5DA3625C24F8B0077B992 /* GTFramwork */ = {
+			isa = PBXGroup;
+			children = (
+				60D5DA3E25C2546A0077B992 /* GTStatic.h */,
+				60D5DA3C25C254690077B992 /* GTStaticTest.h */,
+				60D5DA3D25C254690077B992 /* libGTStatic.a */,
+			);
+			path = GTFramwork;
+			sourceTree = "<group>";
+		};
 		E460F013645FD38CF1ED5334 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +299,7 @@
 			files = (
 				6043D9B825A450E300CACA14 /* Assets.xcassets in Resources */,
 				6043D9B625A450DF00CACA14 /* Main.storyboard in Resources */,
+				60B6A0D025C29B8300079FBB /* icon.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,11 +510,20 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LV58Y697NZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SampleApp/GTFramwork",
+				);
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SampleApp/GTFramwork",
+					"$(PROJECT_DIR)/SampleApp/GTFramwork/GTFramework.framework",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yangjoker.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,11 +542,20 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LV58Y697NZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SampleApp/GTFramwork",
+				);
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SampleApp/GTFramwork",
+					"$(PROJECT_DIR)/SampleApp/GTFramwork/GTFramework.framework",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yangjoker.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
