@@ -29,7 +29,6 @@
 		60B6A0D025C29B8300079FBB /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60B6A0CF25C29B8300079FBB /* icon.bundle */; };
 		60B6A0D625C29D0600079FBB /* GTMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B6A0D525C29D0600079FBB /* GTMineViewController.m */; };
 		60B6A0DA25C29D1B00079FBB /* GTLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B6A0D925C29D1B00079FBB /* GTLogin.m */; };
-		60D5DA3F25C2546A0077B992 /* libGTStatic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D5DA3D25C254690077B992 /* libGTStatic.a */; };
 		DAC5DDC7D915CADF1661A59C /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C6102675066F9065C434E8 /* Pods_SampleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +89,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60D5DA3F25C2546A0077B992 /* libGTStatic.a in Frameworks */,
 				DAC5DDC7D915CADF1661A59C /* Pods_SampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

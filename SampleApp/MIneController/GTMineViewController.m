@@ -6,6 +6,8 @@
 //
 
 #import "GTMineViewController.h"
+#import "GTLogin.h"
+#import <SDWebImage.h>
 
 @interface GTMineViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -49,8 +51,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mineTableViewCell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mineTableViewCell"];
-        cell.imageView.image = [UIImage systemImageNamed:@"play"];
-        cell.textLabel.text = @"昵称";
     }
     return cell;
 }
@@ -59,7 +59,7 @@
     return 60;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section{
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section{
     return 200;
 }
 
@@ -87,11 +87,36 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{
-    [_headerImageView setImage:[UIImage imageNamed:@"icon.bundle/icon.png"]];
+    
+    if (![[GTLogin sharedLogin] isLogin]) {
+        [_headerImageView setImage:[UIImage imageNamed:@"icon.bundle/icon.png"]];
+    }else{
+        [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:[GTLogin sharedLogin].avatarUrl]];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if(indexPath.row == 0){
+        cell.textLabel.text = [[GTLogin sharedLogin] isLogin] ? [GTLogin sharedLogin].nick : @"昵称";
+    }else {
+        cell.textLabel.text = [[GTLogin sharedLogin] isLogin] ? [GTLogin sharedLogin].address : @"地区";
+    }
 }
 
 -(void)_tapImage{
-    
+    if (![[GTLogin sharedLogin] isLogin]) {
+        //没有登录的时候拉起登录
+        [[GTLogin sharedLogin] loginWithFinishBlocck:^(BOOL isLogin) {
+            if (isLogin) {
+                [self.tableView reloadData];
+            }
+        }];
+    }else{
+        //已经登录则退出登录
+        [[GTLogin sharedLogin] logOut];
+        [self.tableView reloadData];
+    }
 }
 
 
