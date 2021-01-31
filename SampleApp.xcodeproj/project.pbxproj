@@ -12,6 +12,7 @@
 		601E809325B0371200F3A51B /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 601E809225B0371200F3A51B /* GTListLoader.m */; };
 		602697C425C1114500F9F567 /* GTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 602697C325C1114500F9F567 /* GTMediator.m */; };
 		60319CBF25BD3FA5005FAAB4 /* GTVideoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */; };
+		6032075525C408B1007958ED /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6032075425C408B1007958ED /* TencentOpenAPI.framework */; };
 		6043D9AD25A450DF00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9AC25A450DF00CACA14 /* AppDelegate.m */; };
 		6043D9B025A450DF00CACA14 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9AF25A450DF00CACA14 /* SceneDelegate.m */; };
 		6043D9B325A450DF00CACA14 /* GTNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9B225A450DF00CACA14 /* GTNewsViewController.m */; };
@@ -29,6 +30,7 @@
 		60B6A0D025C29B8300079FBB /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60B6A0CF25C29B8300079FBB /* icon.bundle */; };
 		60B6A0D625C29D0600079FBB /* GTMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B6A0D525C29D0600079FBB /* GTMineViewController.m */; };
 		60B6A0DA25C29D1B00079FBB /* GTLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B6A0D925C29D1B00079FBB /* GTLogin.m */; };
+		60B6A0E125C3EDB700079FBB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B6A0E025C3EDB700079FBB /* SystemConfiguration.framework */; };
 		DAC5DDC7D915CADF1661A59C /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C6102675066F9065C434E8 /* Pods_SampleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,7 @@
 		602697C325C1114500F9F567 /* GTMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTMediator.m; sourceTree = "<group>"; };
 		60319CBD25BD3FA5005FAAB4 /* GTVideoToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoToolbar.h; sourceTree = "<group>"; };
 		60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoToolbar.m; sourceTree = "<group>"; };
+		6032075425C408B1007958ED /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		6043D9A825A450DF00CACA14 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6043D9AB25A450DF00CACA14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6043D9AC25A450DF00CACA14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		60B6A0D525C29D0600079FBB /* GTMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTMineViewController.m; sourceTree = "<group>"; };
 		60B6A0D825C29D1B00079FBB /* GTLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLogin.h; sourceTree = "<group>"; };
 		60B6A0D925C29D1B00079FBB /* GTLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTLogin.m; sourceTree = "<group>"; };
+		60B6A0E025C3EDB700079FBB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		60D5DA3C25C254690077B992 /* GTStaticTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTStaticTest.h; sourceTree = "<group>"; };
 		60D5DA3D25C254690077B992 /* libGTStatic.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGTStatic.a; sourceTree = "<group>"; };
 		60D5DA3E25C2546A0077B992 /* GTStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTStatic.h; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC5DDC7D915CADF1661A59C /* Pods_SampleApp.framework in Frameworks */,
+				6032075525C408B1007958ED /* TencentOpenAPI.framework in Frameworks */,
+				60B6A0E125C3EDB700079FBB /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +105,7 @@
 		22F54CC7CDA7EFB009C58805 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60B6A0E025C3EDB700079FBB /* SystemConfiguration.framework */,
 				10C6102675066F9065C434E8 /* Pods_SampleApp.framework */,
 			);
 			name = Frameworks;
@@ -231,6 +238,7 @@
 		60D5DA3625C24F8B0077B992 /* GTFramwork */ = {
 			isa = PBXGroup;
 			children = (
+				6032075425C408B1007958ED /* TencentOpenAPI.framework */,
 				60D5DA3E25C2546A0077B992 /* GTStatic.h */,
 				60D5DA3C25C254690077B992 /* GTStaticTest.h */,
 				60D5DA3D25C254690077B992 /* libGTStatic.a */,
@@ -516,6 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SampleApp/SampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SampleApp/SampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
