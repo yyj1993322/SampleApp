@@ -13,6 +13,7 @@
 		602697C425C1114500F9F567 /* GTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 602697C325C1114500F9F567 /* GTMediator.m */; };
 		60319CBF25BD3FA5005FAAB4 /* GTVideoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */; };
 		6032075525C408B1007958ED /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6032075425C408B1007958ED /* TencentOpenAPI.framework */; };
+		6032075F25C699FF007958ED /* GTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6032075E25C699FF007958ED /* GTLocation.m */; };
 		6043D9AD25A450DF00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9AC25A450DF00CACA14 /* AppDelegate.m */; };
 		6043D9B025A450DF00CACA14 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9AF25A450DF00CACA14 /* SceneDelegate.m */; };
 		6043D9B325A450DF00CACA14 /* GTNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043D9B225A450DF00CACA14 /* GTNewsViewController.m */; };
@@ -49,6 +50,8 @@
 		60319CBD25BD3FA5005FAAB4 /* GTVideoToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoToolbar.h; sourceTree = "<group>"; };
 		60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoToolbar.m; sourceTree = "<group>"; };
 		6032075425C408B1007958ED /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		6032075D25C699FF007958ED /* GTLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLocation.h; sourceTree = "<group>"; };
+		6032075E25C699FF007958ED /* GTLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTLocation.m; sourceTree = "<group>"; };
 		6043D9A825A450DF00CACA14 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6043D9AB25A450DF00CACA14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6043D9AC25A450DF00CACA14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				6045BCEF25BFC1A0004A721F /* GTSplashView.m */,
 				602697C225C1114500F9F567 /* GTMediator.h */,
 				602697C325C1114500F9F567 /* GTMediator.m */,
+				6032075D25C699FF007958ED /* GTLocation.h */,
+				6032075E25C699FF007958ED /* GTLocation.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				6043D9B025A450DF00CACA14 /* SceneDelegate.m in Sources */,
 				608AA72825B824F5004F667D /* GTVideoCoverView.m in Sources */,
 				601996C725BAB61400D8C5B3 /* GTVideoPlayer.m in Sources */,
+				6032075F25C699FF007958ED /* GTLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

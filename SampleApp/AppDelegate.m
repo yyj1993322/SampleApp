@@ -21,7 +21,7 @@
 //    static
 //    [[GTStaticTest alloc] init];
 	[self _caughtException];
-	[ @[].mutableCopy addObject: nil];
+//	[ @[].mutableCopy addObject: nil];
 	return YES;
 }
 

@@ -11,6 +11,7 @@
 #import "GTRecommendViewController.h"
 #import "GTSplashView.h"
 #import "GTMineViewController.h"
+#import "GTLocation.h"
 
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
@@ -77,6 +78,7 @@
 //        GTSplashView *splashView = [[GTSplashView alloc] initWithFrame:self.window.bounds];
 //        splashView;
 //    })];
+    [[GTLocation locationManager] checkLocationAutherization];
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
