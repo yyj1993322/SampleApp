@@ -12,6 +12,7 @@
 #import "GTSplashView.h"
 #import "GTMineViewController.h"
 #import "GTLocation.h"
+#import "GTNotifiaction.h"
 
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
@@ -79,6 +80,7 @@
 //        splashView;
 //    })];
     [[GTLocation locationManager] checkLocationAutherization];
+    [[GTNotifiaction manager] checkNotifiactionAutherization];
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
