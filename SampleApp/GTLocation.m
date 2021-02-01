@@ -47,12 +47,34 @@
     }
 }
 
+#pragma - delegate
+
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self.manager startUpdatingLocation];
         NSLog(@"");
     }else if(status == kCLAuthorizationStatusDenied){
         NSLog(@"");
     }
 }
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    //地理信息
+    CLLocation *location = [locations lastObject];
+    if (location.horizontalAccuracy > 0) {
+        double longitude = location.coordinate.longitude;
+        double latitude = location.coordinate.latitude;
+
+    }
+    
+    CLGeocoder *coder = [[CLGeocoder alloc] init];
+    [coder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+            //地标信息
+        NSLog(@"");
+    }];
+    [self.manager stopUpdatingLocation];
+}
+
 
 @end
