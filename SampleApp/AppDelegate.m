@@ -8,7 +8,7 @@
 #import "AppDelegate.h"
 #import "GTStaticTest.h"
 #import <execinfo.h>
-
+#import "GTNotification.h"
 @interface AppDelegate ()
 
 @end
@@ -22,6 +22,7 @@
 //    [[GTStaticTest alloc] init];
 	[self _caughtException];
 //	[ @[].mutableCopy addObject: nil];
+    [[GTNotification notificationManager] checkNotificationAuthorization];
 	return YES;
 }
 

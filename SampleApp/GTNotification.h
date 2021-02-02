@@ -11,10 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// APP推送管理
-@interface GTNotifiaction : NSObject
+@interface GTNotification : NSObject
 
-+(GTNotifiaction *) manager;
--(void)checkNotifiactionAutherization;
++(GTNotification *) notificationManager;
+-(void)checkNotificationAuthorization;
 
 @end
 
