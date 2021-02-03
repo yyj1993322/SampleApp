@@ -57,6 +57,8 @@
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler{
+//    -1操作，避免重复通知
+//    [UIApplication sharedApplication].applicationIconBadgeNumber = 100;
     //处理业务逻辑
     completionHandler();
 }

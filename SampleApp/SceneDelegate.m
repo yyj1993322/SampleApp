@@ -62,7 +62,7 @@
 //    recommendView.tabBarItem.selectedImage = [UIImage systemImageNamed:@"stop"];
 
 
-    GTMineViewController *mineController = [[GTMineViewController alloc] init];
+	GTMineViewController *mineController = [[GTMineViewController alloc] init];
 //	mineController.view.backgroundColor = [UIColor lightGrayColor];
 //	mineController.tabBarItem.title = @"我的";
 //	mineController.tabBarItem.image = [UIImage systemImageNamed: @"home"];
@@ -79,11 +79,13 @@
 //        GTSplashView *splashView = [[GTSplashView alloc] initWithFrame:self.window.bounds];
 //        splashView;
 //    })];
-    [[GTLocation locationManager] checkLocationAutherization];
+	[[GTLocation locationManager] checkLocationAutherization];
+    
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
 	NSLog(@"did select");
+    [self _changeIcon];
 }
 
 
@@ -119,5 +121,12 @@
 	// to restore the scene back to its current state.
 }
 
+-(void)_changeIcon {
+	if ([[UIApplication sharedApplication] supportsAlternateIcons]) {
+		[[UIApplication sharedApplication] setAlternateIconName:@"ICONBLACK" completionHandler:^(NSError * _Nullable error) {
+		         NSLog(@"");
+		 }];
+	};
+}
 
 @end

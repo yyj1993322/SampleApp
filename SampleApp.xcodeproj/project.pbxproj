@@ -11,6 +11,7 @@
 		601996C725BAB61400D8C5B3 /* GTVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 601996C625BAB61400D8C5B3 /* GTVideoPlayer.m */; };
 		601E809325B0371200F3A51B /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 601E809225B0371200F3A51B /* GTListLoader.m */; };
 		602697C425C1114500F9F567 /* GTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 602697C325C1114500F9F567 /* GTMediator.m */; };
+		602B6E7825CA5326000889F3 /* ICONBLACK.png in Resources */ = {isa = PBXBuildFile; fileRef = 602B6E7725CA5326000889F3 /* ICONBLACK.png */; };
 		60319CBF25BD3FA5005FAAB4 /* GTVideoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */; };
 		6032075525C408B1007958ED /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6032075425C408B1007958ED /* TencentOpenAPI.framework */; };
 		6032075F25C699FF007958ED /* GTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6032075E25C699FF007958ED /* GTLocation.m */; };
@@ -48,6 +49,7 @@
 		602697BE25C1085D00F9F567 /* SampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleApp.entitlements; sourceTree = "<group>"; };
 		602697C225C1114500F9F567 /* GTMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMediator.h; sourceTree = "<group>"; };
 		602697C325C1114500F9F567 /* GTMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTMediator.m; sourceTree = "<group>"; };
+		602B6E7725CA5326000889F3 /* ICONBLACK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICONBLACK.png; sourceTree = "<group>"; };
 		60319CBD25BD3FA5005FAAB4 /* GTVideoToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoToolbar.h; sourceTree = "<group>"; };
 		60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoToolbar.m; sourceTree = "<group>"; };
 		6032075425C408B1007958ED /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		602B6E7625CA52FA000889F3 /* AlternateIcons */ = {
+			isa = PBXGroup;
+			children = (
+				602B6E7725CA5326000889F3 /* ICONBLACK.png */,
+			);
+			path = AlternateIcons;
+			sourceTree = "<group>";
+		};
 		6043D99F25A450DF00CACA14 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		6043D9AA25A450DF00CACA14 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				602B6E7625CA52FA000889F3 /* AlternateIcons */,
 				60B6A0D225C29C0200079FBB /* MIneController */,
 				60D5DA3625C24F8B0077B992 /* GTFramwork */,
 				602697BE25C1085D00F9F567 /* SampleApp.entitlements */,
@@ -325,6 +336,7 @@
 			files = (
 				6043D9B825A450E300CACA14 /* Assets.xcassets in Resources */,
 				6043D9B625A450DF00CACA14 /* Main.storyboard in Resources */,
+				602B6E7825CA5326000889F3 /* ICONBLACK.png in Resources */,
 				60B6A0D025C29B8300079FBB /* icon.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

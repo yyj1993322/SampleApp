@@ -23,6 +23,7 @@
 	[self _caughtException];
 //	[ @[].mutableCopy addObject: nil];
     [[GTNotification notificationManager] checkNotificationAuthorization];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 100;
 	return YES;
 }
 
@@ -79,6 +80,7 @@ void SignalExceptionHandler(int signal){
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     //GTNOtification中实现
+    
     NSLog(@"");
 }
 
