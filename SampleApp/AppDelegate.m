@@ -75,5 +75,15 @@ void SignalExceptionHandler(int signal){
     //存储crash信息
 }
 
+#pragma mark -
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    //GTNOtification中实现
+    NSLog(@"");
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    
+}
 
 @end
