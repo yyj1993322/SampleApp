@@ -13,6 +13,7 @@
 		602697C425C1114500F9F567 /* GTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 602697C325C1114500F9F567 /* GTMediator.m */; };
 		602B6E7825CA5326000889F3 /* ICONBLACK.png in Resources */ = {isa = PBXBuildFile; fileRef = 602B6E7725CA5326000889F3 /* ICONBLACK.png */; };
 		602B6E9B25CB882F000889F3 /* GTSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B6E9A25CB882F000889F3 /* GTSearchBar.m */; };
+		602B6EA025CB9F16000889F3 /* GTCommentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B6E9F25CB9F16000889F3 /* GTCommentManager.m */; };
 		60319CBF25BD3FA5005FAAB4 /* GTVideoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */; };
 		6032075525C408B1007958ED /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6032075425C408B1007958ED /* TencentOpenAPI.framework */; };
 		6032075F25C699FF007958ED /* GTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6032075E25C699FF007958ED /* GTLocation.m */; };
@@ -68,6 +69,8 @@
 		602B6E8125CB7CEE000889F3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		602B6E9925CB882F000889F3 /* GTSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTSearchBar.h; sourceTree = "<group>"; };
 		602B6E9A25CB882F000889F3 /* GTSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSearchBar.m; sourceTree = "<group>"; };
+		602B6E9E25CB9F16000889F3 /* GTCommentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTCommentManager.h; sourceTree = "<group>"; };
+		602B6E9F25CB9F16000889F3 /* GTCommentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCommentManager.m; sourceTree = "<group>"; };
 		60319CBD25BD3FA5005FAAB4 /* GTVideoToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoToolbar.h; sourceTree = "<group>"; };
 		60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoToolbar.m; sourceTree = "<group>"; };
 		6032075425C408B1007958ED /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 				60883DA425ADA38800272F0B /* GTDeleteCellView.m */,
 				602B6E9925CB882F000889F3 /* GTSearchBar.h */,
 				602B6E9A25CB882F000889F3 /* GTSearchBar.m */,
+				602B6E9E25CB9F16000889F3 /* GTCommentManager.h */,
+				602B6E9F25CB9F16000889F3 /* GTCommentManager.m */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 				6043DA1F25A83FEB00CACA14 /* GTNormalTableViewCell.m in Sources */,
 				6043D9B325A450DF00CACA14 /* GTNewsViewController.m in Sources */,
 				6043DA1725A6F62D00CACA14 /* GTVideoViewController.m in Sources */,
+				602B6EA025CB9F16000889F3 /* GTCommentManager.m in Sources */,
 				60B6A0DA25C29D1B00079FBB /* GTLogin.m in Sources */,
 				602697C425C1114500F9F567 /* GTMediator.m in Sources */,
 				601E809325B0371200F3A51B /* GTListLoader.m in Sources */,
