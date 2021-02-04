@@ -85,7 +85,7 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
 	NSLog(@"did select");
-    [self _changeIcon];
+//    [self _changeIcon];
 }
 
 

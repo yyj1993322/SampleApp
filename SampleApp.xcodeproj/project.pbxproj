@@ -12,6 +12,7 @@
 		601E809325B0371200F3A51B /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 601E809225B0371200F3A51B /* GTListLoader.m */; };
 		602697C425C1114500F9F567 /* GTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 602697C325C1114500F9F567 /* GTMediator.m */; };
 		602B6E7825CA5326000889F3 /* ICONBLACK.png in Resources */ = {isa = PBXBuildFile; fileRef = 602B6E7725CA5326000889F3 /* ICONBLACK.png */; };
+		602B6E9B25CB882F000889F3 /* GTSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B6E9A25CB882F000889F3 /* GTSearchBar.m */; };
 		60319CBF25BD3FA5005FAAB4 /* GTVideoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */; };
 		6032075525C408B1007958ED /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6032075425C408B1007958ED /* TencentOpenAPI.framework */; };
 		6032075F25C699FF007958ED /* GTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6032075E25C699FF007958ED /* GTLocation.m */; };
@@ -37,6 +38,19 @@
 		DAC5DDC7D915CADF1661A59C /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C6102675066F9065C434E8 /* Pods_SampleApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		602B6E9225CB7CF2000889F3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		10C6102675066F9065C434E8 /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		347C7D2B833FE471E9D3329A /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -50,6 +64,10 @@
 		602697C225C1114500F9F567 /* GTMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMediator.h; sourceTree = "<group>"; };
 		602697C325C1114500F9F567 /* GTMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTMediator.m; sourceTree = "<group>"; };
 		602B6E7725CA5326000889F3 /* ICONBLACK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICONBLACK.png; sourceTree = "<group>"; };
+		602B6E7F25CB7CEE000889F3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		602B6E8125CB7CEE000889F3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		602B6E9925CB882F000889F3 /* GTSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTSearchBar.h; sourceTree = "<group>"; };
+		602B6E9A25CB882F000889F3 /* GTSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTSearchBar.m; sourceTree = "<group>"; };
 		60319CBD25BD3FA5005FAAB4 /* GTVideoToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoToolbar.h; sourceTree = "<group>"; };
 		60319CBE25BD3FA5005FAAB4 /* GTVideoToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoToolbar.m; sourceTree = "<group>"; };
 		6032075425C408B1007958ED /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
@@ -115,6 +133,8 @@
 			children = (
 				60B6A0E025C3EDB700079FBB /* SystemConfiguration.framework */,
 				10C6102675066F9065C434E8 /* Pods_SampleApp.framework */,
+				602B6E7F25CB7CEE000889F3 /* WidgetKit.framework */,
+				602B6E8125CB7CEE000889F3 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -223,6 +243,8 @@
 				6043DA1E25A83FEB00CACA14 /* GTNormalTableViewCell.m */,
 				60883DA325ADA38800272F0B /* GTDeleteCellView.h */,
 				60883DA425ADA38800272F0B /* GTDeleteCellView.m */,
+				602B6E9925CB882F000889F3 /* GTSearchBar.h */,
+				602B6E9A25CB882F000889F3 /* GTSearchBar.m */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -288,6 +310,7 @@
 				6043D9A525A450DF00CACA14 /* Frameworks */,
 				6043D9A625A450DF00CACA14 /* Resources */,
 				B5024AC8AAD3A76DE985CC79 /* [CP] Embed Pods Frameworks */,
+				602B6E9225CB7CF2000889F3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -304,6 +327,7 @@
 		6043D9A025A450DF00CACA14 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					6043D9A725A450DF00CACA14 = {
@@ -402,6 +426,7 @@
 				60319CBF25BD3FA5005FAAB4 /* GTVideoToolbar.m in Sources */,
 				6095180B25B411430037B1B7 /* GTListItem.m in Sources */,
 				60B6A0D625C29D0600079FBB /* GTMineViewController.m in Sources */,
+				602B6E9B25CB882F000889F3 /* GTSearchBar.m in Sources */,
 				6043DA1B25A800EE00CACA14 /* GTRecommendViewController.m in Sources */,
 				6045BCF025BFC1A0004A721F /* GTSplashView.m in Sources */,
 				6043D9AD25A450DF00CACA14 /* AppDelegate.m in Sources */,
@@ -546,6 +571,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 88DFB45552A88A569F321960 /* Pods-SampleApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -579,6 +605,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 347C7D2B833FE471E9D3329A /* Pods-SampleApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
